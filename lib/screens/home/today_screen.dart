@@ -1,3 +1,4 @@
+import 'package:app_good_caloric_burn/common/appColors.dart';
 import 'package:flutter/material.dart';
 
 class TodayScreen extends StatefulWidget {
@@ -6,17 +7,17 @@ class TodayScreen extends StatefulWidget {
 }
 
 class _TodayScreenState extends State<TodayScreen> {
-  @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: kBackgroundColor,
       body: Stack(
         children: <Widget>[
           Container(
             height: size.height * .25,
             decoration: BoxDecoration(
-              color: Color(0xFF3A67E0),
+              color: kBlueColor,
             ),
           ),
           SafeArea(
@@ -43,7 +44,7 @@ class _TodayScreenState extends State<TodayScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  "1554",
+                                  '0',
                                   style: Theme.of(context)
                                       .textTheme
                                       .display1

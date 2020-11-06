@@ -1,3 +1,5 @@
+import 'package:app_good_caloric_burn/common/appColors.dart';
+import 'package:app_good_caloric_burn/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -6,32 +8,47 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: kBackgroundColor,
       body: Stack(
         children: <Widget>[
           Container(
             height: size.height * .25,
             decoration: BoxDecoration(
-              color: Color(0xFF3A67E0),
+              color: kBlueColor,
             ),
           ),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Welcome, Elton\n",
-                      style: Theme.of(context)
-                          .textTheme
-                          .display1
-                          .copyWith(fontWeight: FontWeight.w800),
+                    alignment: Alignment.topCenter,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Text(
+                          "Welcome, Elton\n",
+                          style: Theme.of(context)
+                              .textTheme
+                              .display1
+                              .copyWith(fontWeight: FontWeight.w800),
+                        ),
+                        IconButton(
+                          alignment: Alignment.topRight,
+                          onPressed: () async {
+                            await _auth.signOut();
+                          },
+                          icon: Icon(Icons.exit_to_app),
+                          iconSize: 20.0,
+                        ),
+                      ],
                     ),
                   ),
                   Row(

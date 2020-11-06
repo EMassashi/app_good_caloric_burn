@@ -1,7 +1,7 @@
 import 'package:app_good_caloric_burn/common/appColors.dart';
-import 'package:app_good_caloric_burn/screens/exercises_screen.dart';
-import 'package:app_good_caloric_burn/screens/home_page_screen.dart';
-import 'package:app_good_caloric_burn/screens/today_screen.dart';
+import 'package:app_good_caloric_burn/screens/home/exercises_screen.dart';
+import 'package:app_good_caloric_burn/screens/home/home_page_screen.dart';
+import 'package:app_good_caloric_burn/screens/home/today_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -26,13 +26,16 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: kBackgroundColor,
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,
       ),
       bottomNavigationBar: BottomAppBar(
+        color: kBlueColor,
         shape: CircularNotchedRectangle(),
         child: Container(
+          color: kBlueColor,
           height: size.height * .1,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -55,15 +58,13 @@ class _NavBarState extends State<NavBar> {
                         SvgPicture.asset(
                           "assets/icons/calendar.svg",
                           height: 30,
-                          color:
-                              currentTab == 0 ? kActiveIconColor : kTextColor,
+                          color: currentTab == 0 ? kShadowColor : kTextColor,
                         ),
                         Text(
                           'Today',
                           style: TextStyle(
-                              color: currentTab == 0
-                                  ? kActiveIconColor
-                                  : kTextColor),
+                              color:
+                                  currentTab == 0 ? kShadowColor : kTextColor),
                         ),
                       ],
                     ),
@@ -87,14 +88,12 @@ class _NavBarState extends State<NavBar> {
                         SvgPicture.asset(
                           "assets/icons/home.svg",
                           height: 34,
-                          color:
-                              currentTab == 1 ? kActiveIconColor : kTextColor,
+                          color: currentTab == 1 ? kShadowColor : kTextColor,
                         ),
                         Text(
                           'Home',
                           style: TextStyle(
-                            color:
-                                currentTab == 1 ? kActiveIconColor : kTextColor,
+                            color: currentTab == 1 ? kShadowColor : kTextColor,
                           ),
                         ),
                       ],
@@ -119,15 +118,13 @@ class _NavBarState extends State<NavBar> {
                         SvgPicture.asset(
                           "assets/icons/dumbell.svg",
                           height: 35,
-                          color:
-                              currentTab == 2 ? kActiveIconColor : kTextColor,
+                          color: currentTab == 2 ? kShadowColor : kTextColor,
                         ),
                         Text(
                           'Exercises',
                           style: TextStyle(
-                              color: currentTab == 2
-                                  ? kActiveIconColor
-                                  : kTextColor),
+                              color:
+                                  currentTab == 2 ? kShadowColor : kTextColor),
                         ),
                       ],
                     ),

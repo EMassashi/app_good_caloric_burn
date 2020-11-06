@@ -1,41 +1,48 @@
 {
-    "project_info": {
-        "project_number": "266528978247",
-        "firebase_url": "https://app-good-caloric-burning.firebaseio.com",
-        "project_id": "app-good-caloric-burning",
-        "storage_bucket": "app-good-caloric-burning.appspot.com"
-    },
-    "client": [{
-        "client_info": {
-            "mobilesdk_app_id": "1:266528978247:android:cbfdc67729db0f2e840862",
-            "android_client_info": {
-                "package_name": "com.massashi.app_good_caloric_burn"
-            }
-        },
-        "oauth_client": [{
-                "client_id": "266528978247-orjkeqv8b0ou5tui25q1lrtsllqhfsfn.apps.googleusercontent.com",
-                "client_type": 1,
-                "android_info": {
-                    "package_name": "com.massashi.app_good_caloric_burn",
-                    "certificate_hash": "f2b22e3ba1d2f33d9eddd7d405919331a13e66ce"
-                }
-            },
-            {
-                "client_id": "266528978247-eqlp1pnsa1uck0tjju8bc3vavuu5uua5.apps.googleusercontent.com",
-                "client_type": 3
-            }
-        ],
-        "api_key": [{
-            "current_key": "AIzaSyAcZyb1U_eYNTzY-MPhP_jAEOQLtEWUORU"
-        }],
-        "services": {
-            "appinvite_service": {
-                "other_platform_oauth_client": [{
-                    "client_id": "266528978247-eqlp1pnsa1uck0tjju8bc3vavuu5uua5.apps.googleusercontent.com",
-                    "client_type": 3
-                }]
-            }
+  "project_info": {
+    "project_number": "266528978247",
+    "firebase_url": "https://app-good-caloric-burning.firebaseio.com",
+    "project_id": "app-good-caloric-burning",
+    "storage_bucket": "app-good-caloric-burning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266528978247:android:cbfdc67729db0f2e840862",
+        "android_client_info": {
+          "package_name": "com.massashi.app_good_caloric_burn"
         }
-    }],
-    "configuration_version": "1"
+      },
+      "oauth_client": [
+        {
+          "client_id": "266528978247-orjkeqv8b0ou5tui25q1lrtsllqhfsfn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.massashi.app_good_caloric_burn",
+            "certificate_hash": "f2b22e3ba1d2f33d9eddd7d405919331a13e66ce"
+          }
+        },
+        {
+          "client_id": "266528978247-eqlp1pnsa1uck0tjju8bc3vavuu5uua5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcZyb1U_eYNTzY-MPhP_jAEOQLtEWUORU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266528978247-eqlp1pnsa1uck0tjju8bc3vavuu5uua5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
 }

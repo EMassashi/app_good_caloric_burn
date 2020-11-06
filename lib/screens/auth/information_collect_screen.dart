@@ -1,7 +1,10 @@
 import 'package:app_good_caloric_burn/common/appColors.dart';
+import 'package:app_good_caloric_burn/models/user.dart';
 import 'package:flutter/material.dart';
 
 class InitialForm extends StatefulWidget {
+  InitialForm({Key key, this.userData}) : super(key: key);
+  UserModel userData;
   @override
   _InitialFormState createState() => _InitialFormState();
 }
@@ -10,6 +13,7 @@ class _InitialFormState extends State<InitialForm> {
   int sexRadio;
   int objectiveRadio;
   int activityLevel;
+  UserModel userData = UserModel();
   @override
   void initState() {
     super.initState();
@@ -309,7 +313,14 @@ class _InitialFormState extends State<InitialForm> {
                 textColor: kTextColor,
                 color: Colors.blue,
                 elevation: 10.0,
-                onPressed: () {},
+                onPressed: () async {
+                  UserModel userData = await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => InitialForm()));
+                  this.userData.lvlAtividade = activityLevel;
+                  this.userData.objetivo = objectiveRadio;
+                  this.userData.sexo = sexRadio;
+                  Navigator.pop(context, userData);
+                },
                 child: Text('Save'),
               ),
             ],
