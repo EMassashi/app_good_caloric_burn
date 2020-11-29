@@ -1,16 +1,27 @@
-# app_good_caloric_burn
+# Good Caloric Burn
 
-A new Flutter project.
+Good Caloric Burn is a simple physical analysis flutter application developed by the student Elton Massashi Takeuchi in the subject of Mobile Development, in System Analysis and Development course from Universidade São Francisco (USF).
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+![screen1](./assets/images/data_screen.jpeg) 
+![screen2](./assets/images/home_screen.jpeg) 
+![screen3](./assets/images/exercise_screen.jpeg) 
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Go to the [flutter get started page](https://flutter.dev/docs/get-started/install) and follow the installation tutorial for the flutter dependencies.
+- Setup VSCode to work with flutter by downloading the extension: 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    ![image1](./assets/images/extension.png)
+- Setup your phone or an android emulator to run the app.
+- Select the device on VSCode.
+- Clone the repository.
+- Open a terminal on the root of the project and run the run command:
+
+```bash
+flutter run
+```
+
+## License
+[MIT](./LICENSE)
