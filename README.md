@@ -4,9 +4,9 @@ Good Caloric Burn is a simple physical analysis flutter application developed by
 
 ## Preview
 
-![screen1](./assets/images/data_screen.jpeg | width = 100) 
-![screen2](./assets/images/home_screen.jpeg | width = 100) 
-![screen3](./assets/images/exercise_screen.jpeg | width = 100) 
+![screen1](./assets/images/data_screen.jpeg | width=100) 
+![screen2](./assets/images/home_screen.jpeg | width=100) 
+![screen3](./assets/images/exercise_screen.jpeg | width=100) 
 
 ## Installation
 
