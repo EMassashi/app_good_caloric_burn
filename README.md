@@ -22,4 +22,4 @@ flutter run
 ```
 
 ## License
-[MIT](./LICENSE)
+[MIT](./LICENSE.txt)
