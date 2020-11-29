@@ -1,4 +1,5 @@
 import 'package:app_good_caloric_burn/models/user.dart';
+import 'package:app_good_caloric_burn/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
@@ -39,11 +40,16 @@ class AuthService {
   }
 
   // register with email & password
-  Future registerWithEmailAndPassword(String email, String password) async {
+  Future registerWithEmailAndPassword(
+      String email, String password, UserModel userData) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User user = result.user;
+
+      // create a a new document for the user with de uid
+      await DatabaseService(uid: user.uid).updateUserData(userData);
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());

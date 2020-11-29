@@ -98,17 +98,23 @@ class _RegisterState extends State<Register> {
                         RaisedButton(
                           onPressed: () async {
                             if (_formKey.currentState.validate()) {
-                              /*setState(() {
+                              setState(() {
                                 loading = true;
-                              });*/
+                              });
                               UserModel userData = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => InitialForm()));
+                              setState(() {
+                                loading = false;
+                              });
                               userData.nome = name;
+                              userData.kcal = 0;
+                              userData.time = 0;
+                              userData.treinos = 0;
                               dynamic result =
                                   await _auth.registerWithEmailAndPassword(
-                                      email, password);
+                                      email, password, userData);
                               if (result == null) {
                                 setState(() {
                                   error = 'please supply a valid email';
@@ -117,8 +123,13 @@ class _RegisterState extends State<Register> {
                               }
                             }
                           },
-                          color: Colors.blue,
-                          child: Text('Register'),
+                          color: kActiveIconColor,
+                          child: Text(
+                            'Register',
+                            style: TextStyle(
+                              color: kTextColor,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: 15,

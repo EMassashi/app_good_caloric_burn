@@ -37,75 +37,82 @@ class _SignInState extends State<SignIn> {
               elevation: 0.0,
               title: Text('Sign in'),
             ),
-            body: Container(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 20,
-                      ),
-                      TextFormField(
-                        decoration:
-                            textInputDecoration.copyWith(hintText: 'Email'),
-                        validator: (val) =>
-                            val.isEmpty ? 'Enter an Email' : null,
-                        onChanged: (value) {
-                          setState(() {
-                            email = value;
-                          });
-                        },
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      TextFormField(
-                        decoration:
-                            textInputDecoration.copyWith(hintText: 'Password'),
-                        validator: (value) =>
-                            value.length < 6 ? 'Enter a password' : null,
-                        obscureText: true,
-                        onChanged: (value) {
-                          setState(() {
-                            password = value;
-                          });
-                        },
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      RaisedButton(
-                        onPressed: () async {
-                          if (_formKey.currentState.validate()) {
-                            setState(() {
-                              loading = true;
-                            });
-                            dynamic result = await _auth
-                                .signInWithEmailAndPassword(email, password);
-
-                            if (result == null) {
-                              setState(() {
-                                error =
-                                    'could not sign in with those credentials';
-                                loading = false;
-                              });
-                            }
-                          }
-                        },
-                        color: Colors.blue,
-                        child: Text('Sign in'),
-                      ),
-                      SizedBox(
-                        height: 20,
-                        child: Text(
-                          error,
-                          style: TextStyle(color: Colors.red, fontSize: 14),
+            body: SingleChildScrollView(
+              child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 20,
                         ),
-                      ),
-                    ],
-                  ),
-                )),
+                        TextFormField(
+                          decoration:
+                              textInputDecoration.copyWith(hintText: 'Email'),
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter an Email' : null,
+                          onChanged: (value) {
+                            setState(() {
+                              email = value;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          decoration: textInputDecoration.copyWith(
+                              hintText: 'Password'),
+                          validator: (value) =>
+                              value.length < 6 ? 'Enter a password' : null,
+                          obscureText: true,
+                          onChanged: (value) {
+                            setState(() {
+                              password = value;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        RaisedButton(
+                          onPressed: () async {
+                            if (_formKey.currentState.validate()) {
+                              setState(() {
+                                loading = true;
+                              });
+                              dynamic result = await _auth
+                                  .signInWithEmailAndPassword(email, password);
+
+                              if (result == null) {
+                                setState(() {
+                                  error =
+                                      'could not sign in with those credentials';
+                                  loading = false;
+                                });
+                              }
+                            }
+                          },
+                          color: kActiveIconColor,
+                          child: Text(
+                            'Sign in',
+                            style: TextStyle(
+                              color: kTextColor,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                          child: Text(
+                            error,
+                            style: TextStyle(color: Colors.red, fontSize: 14),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+            ),
           );
   }
 }
