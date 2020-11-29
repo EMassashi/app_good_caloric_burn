@@ -9,7 +9,7 @@ Good Caloric Burn is a simple physical analysis flutter application developed by
 ## Installation
 
 - Go to the [flutter get started page](https://flutter.dev/docs/get-started/install) and follow the installation tutorial for the flutter dependencies.
-- Setup VSCode to work with flutter by downloading the extension: 
+- Setup [VSCode](https://code.visualstudio.com) to work with flutter by downloading the extension: 
 
     ![image1](./assets/images/extension.png)
 - Setup your phone or an android emulator to run the app.
